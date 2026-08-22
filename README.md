@@ -42,6 +42,6 @@ Bootstrap 5.3, Bootstrap Icons y la fuente Inter se cargan desde CDN
 | Integrante | Rama |
 |---|---|
 | Michael Xavier Portillo Reyes | `dev-michael` |
-| [Integrante 2] | `dev-usuario2` |
-| [Integrante 3] | `dev-usuario3` |
-| [Integrante 4] | `dev-usuario4` |
+| Rafael Aquino Rodriguez | `dev-Rafael` |
+| Isel Metzí Carrillo Mejías | `dev-Isel` |
+| Kevin Eduardo Huezo Campos | `dev-Kevin` |
