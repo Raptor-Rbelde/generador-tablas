@@ -1,0 +1,271 @@
+{
+  "caracteristicas": [
+    {
+      "id": 1,
+      "icono": "bi-grid-3x3",
+      "titulo": "Filas y columnas a medida",
+      "descripcion": "Hasta 50 filas y 20 columnas. Después puedes agregar o quitar las que quieras."
+    },
+    {
+      "id": 2,
+      "icono": "bi-palette",
+      "titulo": "Líneas y colores",
+      "descripcion": "Línea continua, discontinua, punteada o doble; grosor y colores de borde, encabezado y celdas."
+    },
+    {
+      "id": 3,
+      "icono": "bi-union",
+      "titulo": "Celdas combinadas",
+      "descripcion": "Activa la opción, selecciona un rango y únelo en una sola celda. Se puede deshacer."
+    },
+    {
+      "id": 4,
+      "icono": "bi-image",
+      "titulo": "Texto e imágenes",
+      "descripcion": "Escribe directo en la celda. Las imágenes pueden venir de una URL, de tu equipo o de la galería."
+    },
+    {
+      "id": 5,
+      "icono": "bi-code-slash",
+      "titulo": "Código fuente",
+      "descripcion": "HTML y CSS ordenados, listos para copiar o descargar como archivo .html."
+    },
+    {
+      "id": 6,
+      "icono": "bi-phone",
+      "titulo": "También en el teléfono",
+      "descripcion": "El diseño se adapta a pantallas pequeñas y hay un modo de selección táctil."
+    }
+  ],
+  "pasos": [
+    {
+      "id": 1,
+      "titulo": "Configura",
+      "descripcion": "Filas, columnas, encabezado y si se podrán combinar celdas."
+    },
+    {
+      "id": 2,
+      "titulo": "Edita",
+      "descripcion": "Escribe, inserta imágenes y combina rangos."
+    },
+    {
+      "id": 3,
+      "titulo": "Da formato",
+      "descripcion": "Usa un tema o ajusta líneas y colores a mano."
+    },
+    {
+      "id": 4,
+      "titulo": "Exporta",
+      "descripcion": "Copia el código y pégalo en tu sitio."
+    }
+  ],
+  "temas": [
+    {
+      "id": 1,
+      "nombre": "Tinta",
+      "tipoLinea": "solid",
+      "grosor": 1,
+      "colorBorde": "#c9c4b6",
+      "colorEncabezado": "#16181d",
+      "colorTextoEncabezado": "#fffdf8",
+      "colorCelda": "#ffffff",
+      "colorTexto": "#16181d",
+      "cebra": false,
+      "colorCebra": "#f6f4ee"
+    },
+    {
+      "id": 2,
+      "nombre": "Cebra azul",
+      "tipoLinea": "solid",
+      "grosor": 1,
+      "colorBorde": "#bfdbfe",
+      "colorEncabezado": "#1d4ed8",
+      "colorTextoEncabezado": "#ffffff",
+      "colorCelda": "#ffffff",
+      "colorTexto": "#1e293b",
+      "cebra": true,
+      "colorCebra": "#eff6ff"
+    },
+    {
+      "id": 3,
+      "nombre": "Clásica",
+      "tipoLinea": "double",
+      "grosor": 3,
+      "colorBorde": "#334155",
+      "colorEncabezado": "#e2e8f0",
+      "colorTextoEncabezado": "#0f172a",
+      "colorCelda": "#ffffff",
+      "colorTexto": "#0f172a",
+      "cebra": false,
+      "colorCebra": "#f8fafc"
+    },
+    {
+      "id": 4,
+      "nombre": "Boceto",
+      "tipoLinea": "dashed",
+      "grosor": 2,
+      "colorBorde": "#a16207",
+      "colorEncabezado": "#fef3c7",
+      "colorTextoEncabezado": "#713f12",
+      "colorCelda": "#fffbeb",
+      "colorTexto": "#422006",
+      "cebra": false,
+      "colorCebra": "#fef9c3"
+    },
+    {
+      "id": 5,
+      "nombre": "Nocturna",
+      "tipoLinea": "dotted",
+      "grosor": 2,
+      "colorBorde": "#64748b",
+      "colorEncabezado": "#0f172a",
+      "colorTextoEncabezado": "#facc15",
+      "colorCelda": "#1e293b",
+      "colorTexto": "#e2e8f0",
+      "cebra": true,
+      "colorCebra": "#334155"
+    }
+  ],
+  "plantillas": [
+    {
+      "id": 1,
+      "nombre": "Horario de clases",
+      "encabezado": true,
+      "celdas": [
+        [
+          "Hora",
+          "Lunes",
+          "Martes",
+          "Miércoles",
+          "Jueves",
+          "Viernes"
+        ],
+        [
+          "7:00",
+          "Matemática",
+          "Física",
+          "Matemática",
+          "Física",
+          "Programación"
+        ],
+        [
+          "9:00",
+          "Programación",
+          "Inglés",
+          "Programación",
+          "Inglés",
+          "Laboratorio"
+        ],
+        [
+          "11:00",
+          "Almuerzo",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "combinaciones": [
+        {
+          "fila": 3,
+          "columna": 1,
+          "filas": 1,
+          "columnas": 5
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Lista de precios",
+      "encabezado": true,
+      "celdas": [
+        [
+          "Producto",
+          "Descripción",
+          "Precio"
+        ],
+        [
+          "Café",
+          "Taza de 12 oz",
+          "$1.50"
+        ],
+        [
+          "Pupusas",
+          "Revueltas o de queso",
+          "$0.75"
+        ],
+        [
+          "Horchata",
+          "Vaso grande",
+          "$1.00"
+        ]
+      ],
+      "combinaciones": []
+    },
+    {
+      "id": 3,
+      "nombre": "Notas del ciclo",
+      "encabezado": true,
+      "celdas": [
+        [
+          "Estudiante",
+          "Periodo 1",
+          "Periodo 2",
+          "Periodo 3",
+          "Promedio"
+        ],
+        [
+          "Ana",
+          "8.5",
+          "9.0",
+          "8.0",
+          "8.5"
+        ],
+        [
+          "Luis",
+          "7.0",
+          "7.5",
+          "8.0",
+          "7.5"
+        ]
+      ],
+      "combinaciones": []
+    }
+  ],
+  "desarrolladores": [
+    {
+      "id": 1,
+      "nombre": "Michael Xavier Portillo Reyes",
+      "rol": "Equipo de desarrollo"
+    },
+    {
+      "id": 2,
+      "nombre": "Rafael Aquino Rodriguez",
+      "rol": "Equipo de desarrollo"
+    },
+    {
+      "id": 3,
+      "nombre": "Isel Metzí Carrillo Mejías",
+      "rol": "Equipo de desarrollo"
+    },
+    {
+      "id": 4,
+      "nombre": "Kevin Eduardo Huezo Campos",
+      "rol": "Equipo de desarrollo"
+    }
+  ],
+  "asuntos": [
+    {
+      "id": 1,
+      "nombre": "Consulta general"
+    },
+    {
+      "id": 2,
+      "nombre": "Reportar un error"
+    },
+    {
+      "id": 3,
+      "nombre": "Sugerencia de mejora"
+    }
+  ]
+}
