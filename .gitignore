@@ -8,3 +8,6 @@
 
 # Logs
 *.log
+
+# Configuración local de herramientas
+.claude/

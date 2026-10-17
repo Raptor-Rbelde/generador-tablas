@@ -4,123 +4,148 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Generador de tablas dinámicas manipulando el DOM">
-  <title>Generador de Tablas | DOM</title>
+  <title>Inicio | Generador de Tablas</title>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-
-  <!-- Tipografía Inter (Google Fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap 5.3 desde CDN -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <!-- Hoja de estilos propia -->
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-app">
+    <nav class="navbar navbar-expand-lg navbar-app">
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-          <img src="img/logo.svg" alt="Logotipo del generador de tablas" width="28" height="28">
-          Generador de Tablas
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logo.svg" alt="" width="26" height="26">
+          Generador de Tablas <small>LIC</small>
         </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal" aria-expanded="false" aria-label="Mostrar menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="generador.html">Generador</a></li>
+            <li class="nav-item"><a class="nav-link" href="desarrolladores.html">Desarrolladores</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">Contáctanos</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
   </header>
 
-  <main class="container my-4">
+  <main id="app" v-cloak>
 
-    <div class="page-header text-center mb-4">
-      <h1 class="h3 fw-bold mb-2">Generador de Tablas Dinámicas</h1>
-      <p class="lead mb-0">Crea, edita y exporta tablas manipulando el DOM con JavaScript.</p>
-    </div>
+    <!-- Portada -->
+    <section class="portada">
+      <div class="container">
+        <div class="row align-items-center gy-4 gx-lg-5">
+          <div class="col-12 col-lg-6">
+            <span class="etiqueta etiqueta-acento">Proyecto de cátedra · Problema 4</span>
+            <h1>Arma tu tabla, <em>celda por celda</em>, y llévate el código.</h1>
+            <p class="intro">
+              Elige filas y columnas, escribe en las celdas, mete imágenes, combina lo que haga falta
+              y cambia líneas y colores. Al final copias el HTML y lo pegas en tu página.
+            </p>
+            <a href="generador.html" class="btn btn-primary btn-lg btn-flecha">Abrir el generador</a>
+          </div>
 
-    <div class="row g-4">
-
-      <!-- Panel de configuración -->
-      <section id="panel-configuracion" class="col-12 col-lg-4">
-        <h2 class="h5 d-flex align-items-center gap-2">
-          <i class="bi bi-sliders" aria-hidden="true"></i> Configuración
-        </h2>
-        <form id="formConfiguracion" class="card card-body">
-          <div class="mb-3">
-            <label for="inputFilas" class="form-label">Filas</label>
-            <input type="number" id="inputFilas" class="form-control"
-                   min="1" max="50" value="3" required>
+          <div class="col-12 col-lg-6">
+            <div class="table-responsive pe-2 pb-2">
+              <table class="muestra" aria-label="Ejemplo de tabla generada">
+                <thead>
+                  <tr><th class="coord"></th><th class="coord">A</th><th class="coord">B</th><th class="coord">C</th></tr>
+                  <tr><th class="coord">1</th><th>Hora</th><th>Lunes</th><th>Martes</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td class="coord">2</td><td>7:00</td><td>Matemática</td><td>Física</td></tr>
+                  <tr><td class="coord">3</td><td>9:00</td><td>Programación</td><td>Inglés</td></tr>
+                  <tr><td class="coord">4</td><td colspan="3" class="combinada">Receso</td></tr>
+                  <tr><td class="coord">5</td><td>11:00</td><td>Laboratorio</td><td>Redes</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="inputColumnas" class="form-label">Columnas</label>
-            <input type="number" id="inputColumnas" class="form-control"
-                   min="1" max="20" value="3" required>
-          </div>
-          <div class="form-check mb-3">
-            <input type="checkbox" id="chkEncabezado" class="form-check-input" checked>
-            <label for="chkEncabezado" class="form-check-label">Incluir encabezado</label>
-          </div>
-          <div class="mb-3">
-            <label for="selectEstilo" class="form-label">Estilo de tabla</label>
-            <select id="selectEstilo" class="form-select">
-              <option value="basica">Básica</option>
-              <option value="cebra">Cebra</option>
-              <option value="bordes">Con bordes</option>
-            </select>
-          </div>
-          <button type="button" id="btnGenerar" class="btn btn-primary">
-            <i class="bi bi-table" aria-hidden="true"></i> Generar tabla
-          </button>
-          <button type="button" id="btnLimpiar" class="btn btn-outline-secondary mt-2">
-            <i class="bi bi-eraser" aria-hidden="true"></i> Limpiar
-          </button>
-        </form>
-
-        <div id="controles-edicion" class="btn-group-vertical w-100 mt-3 d-none" role="group"
-             aria-label="Acciones de edición de la tabla">
-          <button type="button" id="btnAgregarFila" class="btn btn-outline-primary">
-            <i class="bi bi-plus-lg" aria-hidden="true"></i> Agregar fila
-          </button>
-          <button type="button" id="btnAgregarColumna" class="btn btn-outline-primary">
-            <i class="bi bi-plus-lg" aria-hidden="true"></i> Agregar columna
-          </button>
-          <button type="button" id="btnEliminarFila" class="btn btn-outline-danger">
-            <i class="bi bi-dash-lg" aria-hidden="true"></i> Eliminar fila
-          </button>
-          <button type="button" id="btnEliminarColumna" class="btn btn-outline-danger">
-            <i class="bi bi-dash-lg" aria-hidden="true"></i> Eliminar columna
-          </button>
-          <button type="button" id="btnExportarCSV" class="btn btn-success">
-            <i class="bi bi-filetype-csv" aria-hidden="true"></i> Exportar CSV
-          </button>
-          <button type="button" id="btnCopiarHTML" class="btn btn-success">
-            <i class="bi bi-clipboard-check" aria-hidden="true"></i> Copiar HTML
-          </button>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Área de trabajo: la tabla se inyecta aquí con JavaScript -->
-      <section id="area-tabla" class="col-12 col-lg-8 table-responsive" aria-live="polite">
-        <p id="mensajeVacio" class="text-muted">
-          <i class="bi bi-table" aria-hidden="true"></i>
-          Configure los parámetros y presione “Generar tabla”.
-        </p>
-      </section>
+    <div class="container">
 
+      <div v-if="cargando" class="py-5 etiqueta">Cargando contenido…</div>
+      <div v-else-if="error" class="alert alert-warning my-5">{{ error }}</div>
+
+      <template v-else>
+        <section class="seccion">
+          <div class="seccion-titulo">
+            <span class="etiqueta etiqueta-acento">01</span>
+            <h2>Qué puedes hacer</h2>
+          </div>
+          <ul class="lista-filas dos-columnas">
+            <li v-for="(c, i) in caracteristicas" :key="c.id">
+              <span class="num">A{{ i + 1 }}</span>
+              <div>
+                <h3>{{ c.titulo }}</h3>
+                <p>{{ c.descripcion }}</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="seccion">
+          <div class="seccion-titulo">
+            <span class="etiqueta etiqueta-acento">02</span>
+            <h2>Cómo funciona</h2>
+          </div>
+          <ol class="pasos">
+            <li v-for="(p, i) in pasos" :key="p.id">
+              <span class="etiqueta">Paso {{ letra(i) }}1</span>
+              <h3>{{ p.titulo }}</h3>
+              <p>{{ p.descripcion }}</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="seccion">
+          <div class="seccion-titulo">
+            <span class="etiqueta etiqueta-acento">03</span>
+            <h2>Temas incluidos</h2>
+          </div>
+          <div class="temas">
+            <figure v-for="t in temas" :key="t.id" class="tema-muestra m-0">
+              <table :style="{ backgroundColor: t.colorCelda }">
+                <tr>
+                  <th v-for="n in 3" :key="n"
+                      :style="{ backgroundColor: t.colorEncabezado, border: borde(t) }"></th>
+                </tr>
+                <tr v-for="f in 3" :key="f">
+                  <td v-for="n in 3" :key="n"
+                      :style="{ border: borde(t), backgroundColor: t.cebra && f % 2 === 0 ? t.colorCebra : t.colorCelda }"></td>
+                </tr>
+              </table>
+              <figcaption class="etiqueta">{{ t.nombre }}</figcaption>
+            </figure>
+          </div>
+        </section>
+      </template>
     </div>
-
-    <!-- Contenedor de avisos (alertas creadas dinámicamente con el DOM) -->
-    <div id="avisos" class="position-fixed bottom-0 end-0 p-3" aria-live="assertive"></div>
   </main>
 
-  <footer class="bg-dark text-white text-center py-3 mt-4">
-    <p class="mb-0">Universidad Don Bosco — Lenguajes Interpretados en el Cliente — Ciclo 02-2026</p>
+  <footer class="pie">
+    <div class="container d-flex flex-wrap justify-content-between gap-2">
+      <span>Universidad Don Bosco · Lenguajes Interpretados en el Cliente</span>
+      <span class="etiqueta">Ciclo 02-2026</span>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.4.38/dist/vue.global.prod.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/inicio.js"></script>
 </body>
 </html>
